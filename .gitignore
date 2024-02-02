@@ -33,3 +33,9 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+#VS_Code
+.vscode/
+./idea
+
+/package-lock.json
