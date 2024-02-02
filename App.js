@@ -29,7 +29,16 @@ export default function App() {
   function DrawerNavigator() {
     return (
       <DrawerNavigator>
-        <StackScreens />
+        <Drawer.Screen
+          name="Home"
+          component={TabOneScreen}
+          options={{title: 'Screen 1'}}
+        />
+        <Drawer.Screen
+          name="More"
+          component={TabTwoScreen}
+          options={{title: 'Screen 2'}}
+        />
       </DrawerNavigator>
     );
   }
