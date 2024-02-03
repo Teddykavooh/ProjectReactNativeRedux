@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 // import TabOneScreen from './components/TabOneScreen';
 // import TabTwoScreen from './components/TabTwoScreen';
 import { MyStack } from './components/myStack';
+import { DrawerNavigator } from "./components/drawer";
+import Drawer from "./components/drawer2";
 
 export default function App() {
   return (
@@ -17,7 +19,9 @@ export default function App() {
         <TabOneScreen />
       </View> */}
       <StatusBar style="auto" />
-      <MyStack />
+      {/* <MyStack /> */}
+      <DrawerNavigator />
+      {/* <Drawer /> */}
     </Provider>
   );
 }
