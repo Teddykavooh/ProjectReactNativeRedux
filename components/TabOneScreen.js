@@ -4,7 +4,7 @@ import { StyleSheet, Button, Text, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { deposit, withdraw } from '../reduxState/balanceSlice';
 
-export default function TabOneScreen() {
+export default function TabOneScreen({navigation}) {
   const balance = useSelector((state) => state.balance.value);
   // We use the useDispatch hook to dispatch actions to the store
   const dispatch = useDispatch();
@@ -23,6 +23,15 @@ export default function TabOneScreen() {
       </View>
       <View style={{ marginTop: 20 }}>
         <Text style={{ fontSize: 20 }}>Current Balance: {balance}$</Text>
+      </View>
+      <View style={{ marginTop: 20 }}>
+      <Button
+        title="To Screen 2"
+        onPress={() => {
+          // Navigate to screen 2
+          navigation.navigate('More');
+        }}
+      />
       </View>
     </View>
   );

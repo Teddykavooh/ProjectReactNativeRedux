@@ -1,47 +1,14 @@
-import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import * as React from 'react';
+// import {NavigationContainer} from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { store } from "./reduxState/store";
 import { Provider } from "react-redux";
-import TabOneScreen from './components/TabOneScreen';
-import TabTwoScreen from './components/TabTwoScreen';
+// import TabOneScreen from './components/TabOneScreen';
+// import TabTwoScreen from './components/TabTwoScreen';
+import { MyStack } from './components/myStack';
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
-  const Drawer = createDrawerNavigator();
-  function StackScreens() {
-    <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={TabOneScreen}
-          options={{title: 'Screen 1'}}
-        />
-        <Stack.Screen
-          name="More"
-          component={TabTwoScreen}
-          options={{title: 'Screen 2'}}
-        />
-      </Stack.Navigator>
-  }
-  function DrawerNavigator() {
-    return (
-      <DrawerNavigator>
-        <Drawer.Screen
-          name="Home"
-          component={TabOneScreen}
-          options={{title: 'Screen 1'}}
-        />
-        <Drawer.Screen
-          name="More"
-          component={TabTwoScreen}
-          options={{title: 'Screen 2'}}
-        />
-      </DrawerNavigator>
-    );
-  }
   return (
     <Provider store={store}>
       {/* <View style={styles.container}>
@@ -49,10 +16,8 @@ export default function App() {
         <StatusBar style="auto" />
         <TabOneScreen />
       </View> */}
-      <NavigationContainer>
-        <StatusBar style="auto" />
-        <DrawerNavigator />
-      </NavigationContainer>
+      <StatusBar style="auto" />
+      <MyStack />
     </Provider>
   );
 }
