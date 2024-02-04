@@ -10,7 +10,7 @@ const Drawer = createDrawerNavigator();
 export const DrawerNavigator = () => {
     return (
       <NavigationContainer>
-        <DrawerNavigator initialRouteName="Home">
+        <Drawer.Navigator initialRouteName="Home">
           <Drawer.Screen
             name="Home"
             component={TabOneScreen}
@@ -21,7 +21,7 @@ export const DrawerNavigator = () => {
             component={TabTwoScreen}
             options={{title: 'More'}}
           />
-        </DrawerNavigator>
+        </Drawer.Navigator>
       </NavigationContainer>
     );
 }
